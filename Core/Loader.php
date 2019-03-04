@@ -5,13 +5,10 @@ require_once 'Route.php';
 
 class Loader
 {
-
     private $route;
 
     private $hostName;
     private $proyectConfig;
-    private $imcompleteRoute;
-    private $controller;
 
     public function __construct()
     {
@@ -26,7 +23,7 @@ class Loader
 
     private function loadConfig()
     {
-        $data = file_get_contents('./config.json');
+        $data = file_get_contents('Core/config.json');
         return json_decode($data, true);
     }
 
@@ -38,7 +35,7 @@ class Loader
 
         $this->includeContoller($controller['path']);
         $loadedController = new $controller['controller'];
-        echo $loadedController->{$controller['method']}();
+        echo $this->formatTemplate($loadedController->{$controller['method']}());
     }
 
     private function actualRoute()
@@ -50,6 +47,18 @@ class Loader
     {
         include($controller);
         return str_replace(array("Controller/", ".php"), "", $controller);
+    }
+
+    private function formatTemplate($template) 
+    {
+        $search = array('{%', '%}');
+        $replace = array( '<?php ', ' ?>');
+        
+        $content =  str_replace($search, $replace, $template);   
+
+        ob_start();
+        eval(' ?>' . $content . '<?php ');
+        return ob_get_clean();
     }
 
 }

@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: franklinmoreno
- * Date: 03/03/19
- * Time: 01:12 PM
- */
-
 namespace core;
-
 
 class Controller
 {
@@ -17,7 +9,8 @@ class Controller
         $filePath = "Resources/Views/$view.php";
 
         if(file_exists($filePath)){
-            return file_get_contents($filePath);
+            $injection = '{% use Core\Route %}';
+            return $injection .= file_get_contents($filePath);
         }
 
         return "View not found.";
