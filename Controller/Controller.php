@@ -16,9 +16,4 @@ class Controller
         return "View not found.";
     }
 
-    public function notFount()
-    {
-       return $this->view("Errors/404");
-    }
-
 }

@@ -23,8 +23,7 @@ class Loader
 
     private function loadConfig()
     {
-        $data = file_get_contents('Core/config.json');
-        return json_decode($data, true);
+        return parse_ini_file('config.ini', true);
     }
 
     public function init()
@@ -40,7 +39,7 @@ class Loader
 
     private function actualRoute()
     {
-        return str_replace('/'.$this->proyectConfig['proyectName'], '', $_SERVER['REQUEST_URI']);
+        return str_replace('/'.$this->proyectConfig['APP']['APP_NAME'], '', $_SERVER['REQUEST_URI']);
     }
 
     private function includeContoller($controller)

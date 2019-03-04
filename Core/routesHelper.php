@@ -12,7 +12,8 @@ class routesHelper
 
     public static function resource($resource)
     {
-        echo "Resources/$resource";
+    	$server = parse_ini_file('config.ini', true);
+    	echo $server['APP']['APP_URL'].'/'.$server['APP']['APP_NAME']."/Resources/$resource";
     }
 
 }
