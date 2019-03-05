@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/cframo/Wolff-core/blob/master/Resources/img/logo.png" alt="Wolff logo" width="200">
+  <img src="https://github.com/cframo/Wolff-core/blob/master/Resources/img/logo.png" alt="Decaffeinated Wolff logo" width="150">
   <br>
   Wolff - Core
   <br>
