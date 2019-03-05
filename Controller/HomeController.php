@@ -8,12 +8,16 @@ class HomeController extends Controller
 
     public function index()
     {
-        echo "TEST";
+        $this->view('Home');
     }
 
     public function test()
     {
-        return $this->view("Home");
+
+    	$variable = 1;
+    	$variable2 = "dos";
+
+        $this->view("Test")->pass(compact('variable2'));
     }
 
 }

@@ -2,4 +2,6 @@
 
 use core\Route;
 
-Route::add('/', 'HomeController@test');
+Route::add('/test', 'HomeController@test');
+
+Route::add('/', 'HomeController@index');

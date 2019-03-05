@@ -34,7 +34,8 @@ class Loader
 
         $this->includeContoller($controller['path']);
         $loadedController = new $controller['controller'];
-        echo $this->formatTemplate($loadedController->{$controller['method']}());
+        $loadedController->{$controller['method']}();
+        echo $this->formatTemplate($loadedController->storedView);
     }
 
     private function actualRoute()
