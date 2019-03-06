@@ -11,13 +11,4 @@ class HomeController extends Controller
         $this->view('Home');
     }
 
-    public function test()
-    {
-
-    	$variable = 1;
-    	$variable2 = "dos";
-
-        $this->view("Test")->pass(compact('variable2'));
-    }
-
 }
