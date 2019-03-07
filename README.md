@@ -22,6 +22,16 @@ The purpose of this, it's make little parts that can be connect with each other,
 
 This is a experimental repo, for more information visit the original proyect: [Wolff](https://github.com/Usbac/Wolff/)
 
+## Roadmap
+
+- [x] Pass variables to view
+- [ ] Documentation
+- [ ] Block URLs
+- [ ] Implement public folder
+- [ ] Sanitize URLs
+- [ ] Update components (from Wolff)
+- [ ] Composer
+- [ ] Webpack
 
 ## Contributing
 
